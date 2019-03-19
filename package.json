@@ -1,0 +1,21 @@
+{
+  "name": "@acme/core",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:services": "cd packages/services && yarn build",
+    "build:common": "cd packages/common && yarn build",
+    "build:shop": "cd packages/common && yarn build",
+    "build:website": "cd packages/common && yarn build",
+    "prebuild:website": "yarn build:common",
+    "prebuild:shop": "yarn build:common",
+    "common": "cd packages/common && yarn start",
+    "services": "cd packages/services && yarn start",
+    "website": "cd packages/website && yarn start",
+    "shop": "cd packages/shop && yarn start"
+  }
+}
