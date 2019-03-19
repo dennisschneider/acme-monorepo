@@ -4,7 +4,7 @@ import { fetchGeekJoke } from "@acme/services";
 import "./App.css";
 
 const App = () => {
-  const [geekJoke, setGeekJoke] = useState("");
+  const [geekJoke, setGeekJoke] = useState({ setup: "", punchline: "" });
 
   useEffect(() => {
     const fetchJoke = async () => {
@@ -20,7 +20,8 @@ const App = () => {
         <h2>
           <HelloWorld name="website" />
         </h2>
-        <p dangerouslySetInnerHTML={{ __html: geekJoke }} />
+        <p>{geekJoke.setup}</p>
+        <p>{geekJoke.punchline}</p>
       </header>
     </div>
   );
